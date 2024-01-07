@@ -24,6 +24,8 @@ const AssessmentsOverview = () => {
       smallnum1: "+89",
       smallnum2: "+89",
       PeopleIcon: MdPeopleAlt,
+      bg: "red",
+      color: "white",
     },
     {
       type: "Candidate",
@@ -38,6 +40,8 @@ const AssessmentsOverview = () => {
       smallnum2: "+89",
       smallnum3: "+89",
       PeopleIcon: TbWorldShare,
+      bg: "blue",
+      color: "yellow",
     },
     {
       type: "TotalBlock",

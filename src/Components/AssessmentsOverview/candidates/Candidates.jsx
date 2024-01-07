@@ -33,13 +33,13 @@ const Candidate = ({
 
 const renderInfoBlock = (number, title, smallNum) => (
   <>
-    <div>
-      <div className="part1">
+    <Part1>
+      <div className="BoxPart">
         <span className="num">{number}</span>
         {smallNum && <span className="active-green">{smallNum}</span>}
       </div>
       <Title className="title">{title}</Title>
-    </div>
+    </Part1>
     {smallNum && <Line></Line>}
   </>
 );
@@ -53,11 +53,30 @@ const IconContainer = styled.div`
   padding: 10px;
   justify-content: center;
   align-items: center;
-  background-color: #ebe8fd;
+  background-color: ${(props) => (props.bg ? props.bg : "#ebe8fd")};
   border-radius: 6px;
   .icon {
-    color: #6548ee;
+    color: ${(props) => (props.color ? props.color : "#6548ee")};
     font-size: 20px;
+  }
+`;
+
+const Part1 = styled.div`
+  .num {
+    color: #1c4980;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .active-green {
+    color: #05c165;
+    font-weight: 400;
+    font-size: 12px;
+  }
+  .BoxPart {
+    display: flex;
+    gap: 6px;
+    align-items: center;
   }
 `;
 
@@ -72,7 +91,7 @@ const Block2 = styled.div`
   padding: 16px 20px;
   flex-direction: column;
   font-size: 14px;
-  width: 390px;
+  width: 408px;
   font-style: normal;
   font-weight: 600;
   color: #1c4980;

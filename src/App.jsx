@@ -22,6 +22,6 @@ const Main = styled.div`
     flex: 1;
   }
   .content {
-    flex: 7;
+    flex: 8.5;
   }
 `;
