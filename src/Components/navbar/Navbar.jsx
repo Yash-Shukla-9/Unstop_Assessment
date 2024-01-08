@@ -13,7 +13,6 @@ const Navbar = () => {
             <span className="text2">My Assessments</span>
           </div>
         </Block1>
-        <BiMobile className="icon" />
       </Nav>
     </>
   );
