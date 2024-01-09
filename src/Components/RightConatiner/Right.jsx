@@ -39,4 +39,12 @@ const AssessmentSection = styled.div`
   width: 1224px;
   align-items: flex-start;
   gap: 30px;
+
+  @media (max-width: 768px) {
+    width: 375px;
+    flex-direction: column;
+    padding: 20px 15px;
+    align-items: flex-start;
+    gap: 20px;
+  }
 `;

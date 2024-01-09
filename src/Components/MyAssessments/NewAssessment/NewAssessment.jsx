@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaPlus } from "react-icons/fa6";
 import { styled } from "styled-components";
+import AssessmentModal from "../../Modal/Assessment Modal/AssessmentModal";
 const NewAssessment = () => {
+  const [modal, setModal] = useState(false);
+
+  const openModal = () => {
+    setModal(!modal);
+  };
+
   return (
     <MainAssessment>
-      <div className="circle">
+      <div className="circle" onClick={openModal}>
         <FaPlus className="icon" />
       </div>
       <TextBox>
@@ -14,6 +21,12 @@ const NewAssessment = () => {
           <p>MCQs, subjective (text or paragraph)!</p>
         </div>
       </TextBox>
+
+      {modal && (
+        <div className="modal">
+          <AssessmentModal modal={modal} setModal={setModal} />
+        </div>
+      )}
     </MainAssessment>
   );
 };
@@ -30,6 +43,13 @@ const MainAssessment = styled.div`
   border-radius: 12px;
   border: 1px dashed #dadce0;
   background-color: #f6f8fa;
+
+  height: 215px;
+
+  .modal {
+    position: absolute;
+    left: 100px;
+  }
 
   .circle {
     display: flex;

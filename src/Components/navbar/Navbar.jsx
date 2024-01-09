@@ -35,6 +35,12 @@ const Nav = styled.div`
   .icon {
     font-size: 25px;
   }
+
+  @media (max-width: 768px) {
+    width: 375px;
+    height: 50px;
+    padding: 0px 15px;
+  }
 `;
 
 const Line = styled.div`
@@ -52,6 +58,9 @@ const Block1 = styled.div`
     font-size: 22px;
     font-weight: 600;
     color: #1c4984;
+    @media (max-width: 768px) {
+      font-size: 16px;
+    }
   }
 
   .text2 {

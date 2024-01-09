@@ -87,10 +87,12 @@ const Heading = styled.div`
 
 const OverviewBox = styled.div`
   display: flex;
-
   border: 2px solid #dde5ea;
-
   border-radius: 10px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 export default AssessmentsOverview;

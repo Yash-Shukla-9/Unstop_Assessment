@@ -131,6 +131,11 @@ const Part3 = styled.div`
   justify-content: space-between;
   align-items: center;
 
+  @media (max-width: 768px) {
+    justify-content: start;
+    gap: 65px;
+  }
+
   .box1 {
     display: flex;
     margin-top: 10px;
