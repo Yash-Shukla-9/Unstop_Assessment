@@ -3,6 +3,10 @@ import { styled } from "styled-components";
 const Sidebar = () => {
   return (
     <MainConatiner>
+      <div>
+        <img src="/public/segment.png" alt="Dashbord" />
+      </div>
+
       <Blocks1>
         <img src="/dashboard.png" alt="dashboard" className="icon" />
         <span>Dashboard</span>

@@ -15,6 +15,10 @@ const Right = () => {
             <NewAssessment />
             <MathAssessments />
             <MathAssessments />
+            <MathAssessments />
+            <MathAssessments />
+            <MathAssessments />
+            <MathAssessments />
           </AssessmentSection>
         </div>
       </Content>

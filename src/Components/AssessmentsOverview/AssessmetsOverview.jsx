@@ -79,6 +79,7 @@ const Assessment = styled.div`
   gap: 16px;
   margin: 0 0.5em;
   background-color: #ffffff;
+  flex-wrap: wrap;
 `;
 
 const Heading = styled.div`
