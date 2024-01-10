@@ -3,42 +3,54 @@ import { styled } from "styled-components";
 import { ModalContext } from "../../Context/ModalContext";
 
 const Sidebar = () => {
-  const { modal } = useContext(ModalContext);
-  console.log(modal);
+  const { modal, setModal } = useContext(ModalContext);
+
+  const closeModal = () => {
+    setModal(!modal);
+  };
 
   return (
-    <MainConatiner>
+    <>
       {modal && (
-        <div>
-          <Blocks1>
-            <img src="/dashboard.png" alt="dashboard" className="icon" />
-            <span>Dashboard</span>
-          </Blocks1>
-
-          <Active>
-            <img src="/note_alt.png" alt="dashboard" className="icon" />
-            <span>Assessment</span>
-          </Active>
-
-          <Blocks1>
-            <img src="/quiz.png" alt="dashboard" className="icon" />
-            <span>My Library</span>
-          </Blocks1>
-
-          <Block2>
-            <Admin>Admin</Admin>
+        <MainConatiner>
+          <div className="main">
+            <Menu>
+              <span>Menu</span>
+              <img
+                src="/cut.png"
+                alt="dashboard"
+                className="cuticon"
+                onClick={closeModal}
+              />
+            </Menu>
 
             <Blocks1>
-              <img src="/admin_meds.png" alt="dashboard" className="icon" />
-              <span>
-                Round <br />
-                Status
-              </span>
+              <img src="/dashboard.png" alt="dashboard" className="icon" />
+              <span>Dashboard</span>
             </Blocks1>
-          </Block2>
-        </div>
+
+            <Active>
+              <img src="/note_alt.png" alt="dashboard" className="icon" />
+              <span>Assessment</span>
+            </Active>
+
+            <Blocks1>
+              <img src="/quiz.png" alt="dashboard" className="icon" />
+              <span>My Library</span>
+            </Blocks1>
+
+            <Block2>
+              <Admin>Admin</Admin>
+
+              <Blocks12>
+                <img src="/admin_meds.png" alt="dashboard" className="icon" />
+                <span>Round Status</span>
+              </Blocks12>
+            </Block2>
+          </div>
+        </MainConatiner>
       )}
-    </MainConatiner>
+    </>
   );
 };
 
@@ -54,8 +66,13 @@ const MainConatiner = styled.div`
   background-color: #ffffff;
 
   @media (max-width: 768px) {
-    /* display: none; */
     position: absolute;
+    width: 300px;
+    height: 100vh;
+    padding: 40px 20px 10px 20px;
+    align-items: flex-start;
+    gap: 10px;
+    background: #f2f8fe;
   }
 
   .icon {
@@ -73,6 +90,12 @@ const Blocks1 = styled.div`
   padding: 10px 0px;
 
   @media (max-width: 768px) {
+    height: 50px;
+    padding: 10px;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+
     flex-direction: row;
   }
 `;
@@ -108,6 +131,27 @@ const Block2 = styled.div`
   gap: 16px;
   padding: 10px 20px;
   border-top: 1px dashed lightgray;
+  @media (max-width: 768px) {
+    height: 50px;
+    flex-direction: row-reverse;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+  }
+`;
+
+const Blocks12 = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  gap: 10px;
+  font-size: 12px;
+  padding: 10px 0px;
+  @media (max-width: 768px) {
+    flex-direction: row;
+  }
 `;
 
 const Admin = styled.div`
@@ -118,4 +162,17 @@ const Admin = styled.div`
   padding: 2px 8px;
   border: 2px solid red;
   border-radius: 20px;
+`;
+
+const Menu = styled.div`
+  display: flex;
+  height: 36px;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+  padding: 10px 20px;
+
+  .cuticon {
+    cursor: pointer;
+  }
 `;

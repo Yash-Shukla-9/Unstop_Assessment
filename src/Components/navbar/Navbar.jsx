@@ -57,7 +57,7 @@ const Nav = styled.div`
   @media (max-width: 768px) {
     width: 100%;
     height: 50px;
-    padding: 0px 15px;
+    padding: 0px 35px;
     margin: 0;
   }
 `;
