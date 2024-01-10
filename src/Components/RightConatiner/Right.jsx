@@ -4,8 +4,14 @@ import Navbar from "../navbar/Navbar";
 import NewAssessment from "../MyAssessments/NewAssessment/NewAssessment";
 import MathAssessments from "../MyAssessments/MathAssessment/MathAssessments";
 import { useState } from "react";
+import FilterList from "../Modal/FilterListModal/FilterList";
+
 const Right = () => {
-  const [filterlist, setFillterlist] = useState("");
+  const [filterlist, setFillterlist] = useState(false);
+
+  const OpenFilterModal = () => {
+    setFillterlist(!filterlist);
+  };
 
   return (
     <div>
@@ -14,17 +20,33 @@ const Right = () => {
         <div className="Assessment">
           <AssessmentsOverview />
         </div>
+
+        <div className="ShowFilter">{filterlist && <FilterList />}</div>
+
         <div>
           <MyAssessmentBox>
             <h2 className="sec-heading">My Assessment</h2>
             <div className="iconBox">
-              <img src="/public/search.png" alt="search" className="icon1" />
-              <img
-                src="/public/filter_list_alt.png"
-                alt="search"
-                className="icon2"
-              />
-              <img src="/public/bar_chart.png" alt="search" className="icon3" />
+              <div className="iconbox ">
+                <img src="/public/search.png" alt="search" className="icon1" />
+              </div>
+
+              <div className="iconbox">
+                <img
+                  src="/public/filter_list_alt.png"
+                  alt="search"
+                  className="icon2"
+                />
+              </div>
+
+              <div className="icon3box">
+                <img
+                  src="/public/bar_chart.jpg"
+                  alt="search"
+                  className="icon3"
+                  onClick={OpenFilterModal}
+                />
+              </div>
             </div>
           </MyAssessmentBox>
           <AssessmentSection>
@@ -85,6 +107,31 @@ const MyAssessmentBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  .iconbox {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    padding: 4px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 50px;
+    background: #fff;
+  }
+
+  .icon3box {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    padding: 4px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 50px;
+    border: 1px solid #0073e6;
+    background: #f2f8fe;
+  }
   .iconBox {
     display: flex;
     align-items: center;

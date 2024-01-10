@@ -17,8 +17,8 @@ const AssessmentModal = ({ setModal }) => {
       <ModalContent>
         <div className="headbox">
           <h3 className="title">Create new assessment</h3>
-          <div>
-            <RxCross2 className="icon" onClick={() => setModal(false)} />
+          <div className="iconbox">
+            <RxCross2 className="icon2" onClick={() => setModal(false)} />
           </div>
         </div>
         <Line />
@@ -108,6 +108,18 @@ const ModalContent = styled.div`
     }
   }
 
+  .iconbox {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 60px;
+    background: #fbebea;
+  }
+
   .headbox {
     display: flex;
     height: 70px;
@@ -128,6 +140,11 @@ const ModalContent = styled.div`
     }
   }
 
+  .icon2 {
+    font-size: 20px;
+    cursor: pointer;
+    color: #d63500;
+  }
   .icon {
     font-size: 20px;
     cursor: pointer;
