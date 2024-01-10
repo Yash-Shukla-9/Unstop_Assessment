@@ -1,32 +1,43 @@
+import { useContext } from "react";
 import { styled } from "styled-components";
+import { ModalContext } from "../../Context/ModalContext";
 
 const Sidebar = () => {
+  const { modal } = useContext(ModalContext);
+  console.log(modal);
+
   return (
     <MainConatiner>
-      <Blocks1>
-        <img src="/dashboard.png" alt="dashboard" className="icon" />
-        <span>Dashboard</span>
-      </Blocks1>
+      {modal && (
+        <div>
+          <Blocks1>
+            <img src="/dashboard.png" alt="dashboard" className="icon" />
+            <span>Dashboard</span>
+          </Blocks1>
 
-      <Active>
-        <img src="/note_alt.png" alt="dashboard" className="icon" />
-        <span>Assessment</span>
-      </Active>
+          <Active>
+            <img src="/note_alt.png" alt="dashboard" className="icon" />
+            <span>Assessment</span>
+          </Active>
 
-      <Blocks1>
-        <img src="/quiz.png" alt="dashboard" className="icon" />
-        <span>My Library</span>
-      </Blocks1>
+          <Blocks1>
+            <img src="/quiz.png" alt="dashboard" className="icon" />
+            <span>My Library</span>
+          </Blocks1>
 
-      <Block2>
-        <Admin>Admin</Admin>
+          <Block2>
+            <Admin>Admin</Admin>
 
-        <img src="/admin_meds.png" alt="dashboard" className="icon" />
-        <span>
-          Round <br />
-          Status
-        </span>
-      </Block2>
+            <Blocks1>
+              <img src="/admin_meds.png" alt="dashboard" className="icon" />
+              <span>
+                Round <br />
+                Status
+              </span>
+            </Blocks1>
+          </Block2>
+        </div>
+      )}
     </MainConatiner>
   );
 };
@@ -43,7 +54,7 @@ const MainConatiner = styled.div`
   background-color: #ffffff;
 
   @media (max-width: 768px) {
-    display: none;
+    /* display: none; */
     position: absolute;
   }
 
@@ -60,6 +71,10 @@ const Blocks1 = styled.div`
   gap: 10px;
   font-size: 12px;
   padding: 10px 0px;
+
+  @media (max-width: 768px) {
+    flex-direction: row;
+  }
 `;
 
 const Active = styled.div`
@@ -74,6 +89,10 @@ const Active = styled.div`
   background: #e5f1fc;
   font-size: 12px;
   color: #0073e6;
+  @media (max-width: 768px) {
+    width: 100%;
+    flex-direction: row;
+  }
   .Activeicon {
     font-size: 20px;
     color: #0073e6;

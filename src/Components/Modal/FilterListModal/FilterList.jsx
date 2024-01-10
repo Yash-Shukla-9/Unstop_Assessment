@@ -1,5 +1,4 @@
 import { styled } from "styled-components";
-
 import { MdOutlineViewAgenda } from "react-icons/md";
 import { MdPeopleAlt } from "react-icons/md";
 import { TbWorldShare } from "react-icons/tb";
@@ -73,9 +72,9 @@ const Card = ({ type, ...props }) => {
     );
   } else if (type === "Candidate") {
     return (
-      <Totalborder>
+      <Candidateborder>
         <Candidate {...props} />
-      </Totalborder>
+      </Candidateborder>
     );
   }
   return null;
@@ -95,6 +94,7 @@ const OverviewBox = styled.div`
   display: flex;
   border: 2px solid #dde5ea;
   border-radius: 10px;
+  width: 100%;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -104,6 +104,20 @@ const OverviewBox = styled.div`
 const Totalborder = styled.div`
   border-bottom: 2px solid #dde5ea;
   border-left: 0;
+  width: 100%;
+`;
+
+const Candidateborder = styled.div`
+  &:nth-child(odd) {
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+  }
+  width: 100%;
+
+  border-top: 2px solid #dde5ea;
+  border-left: 0;
+  border-right: 0;
 `;
 
 export default FilterList;

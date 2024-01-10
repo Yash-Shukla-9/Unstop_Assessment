@@ -1,6 +1,11 @@
 import { styled } from "styled-components";
 import { BiMobile } from "react-icons/bi";
+import { useContext } from "react";
+import { ModalContext } from "../../Context/ModalContext";
+
 const Navbar = () => {
+  const { closeModal } = useContext(ModalContext);
+
   return (
     <div>
       <Nav>
@@ -11,6 +16,7 @@ const Navbar = () => {
                 src="/public/segment.png"
                 className="dashicon"
                 alt="Dashbord"
+                onClick={closeModal}
               />
               <span className="text1">Assessment</span>
             </div>

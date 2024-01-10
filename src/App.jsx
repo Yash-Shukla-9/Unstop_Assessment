@@ -1,16 +1,19 @@
 import Right from "./Components/RightConatiner/Right";
 import Sidebar from "./Components/sidebar/Sidebar";
 import { styled } from "styled-components";
+import { ModalProvider } from "./Context/ModalContext";
 const App = () => {
   return (
-    <Main>
-      <div className="menu">
-        <Sidebar />
-      </div>
-      <div className="content">
-        <Right />
-      </div>
-    </Main>
+    <ModalProvider>
+      <Main>
+        <div className="menu">
+          <Sidebar />
+        </div>
+        <div className="content">
+          <Right />
+        </div>
+      </Main>
+    </ModalProvider>
   );
 };
 

@@ -28,12 +28,12 @@ const Right = () => {
             <h2 className="sec-heading">My Assessment</h2>
             <div className="iconBox">
               <div className="iconbox ">
-                <img src="/public/search.png" alt="search" className="icon1" />
+                <img src="/search.png" alt="search" className="icon1" />
               </div>
 
               <div className="iconbox">
                 <img
-                  src="/public/filter_list_alt.png"
+                  src="/filter_list_alt.png"
                   alt="search"
                   className="icon2"
                 />
@@ -41,7 +41,7 @@ const Right = () => {
 
               <div className="icon3box">
                 <img
-                  src="/public/bar_chart.jpg"
+                  src="/bar_chart.jpg"
                   alt="search"
                   className="icon3"
                   onClick={OpenFilterModal}
