@@ -2,19 +2,31 @@ import { styled } from "styled-components";
 import { BiMobile } from "react-icons/bi";
 const Navbar = () => {
   return (
-    <>
+    <div>
       <Nav>
         <Block1>
           <div>
-            <span className="text1">Assessment</span>
+            <div className="Dashopen">
+              <img
+                src="/public/segment.png"
+                className="dashicon"
+                alt="Dashbord"
+              />
+              <span className="text1">Assessment</span>
+            </div>
           </div>
+
           <Line></Line>
           <div>
             <span className="text2">My Assessments</span>
           </div>
         </Block1>
       </Nav>
-    </>
+      <MobileTextview>
+        <div className="text3">My Assessments</div>
+        <div className="text4">Unstop Assessments</div>
+      </MobileTextview>
+    </div>
   );
 };
 
@@ -37,9 +49,10 @@ const Nav = styled.div`
   }
 
   @media (max-width: 768px) {
-    width: 375px;
+    width: 100%;
     height: 50px;
     padding: 0px 15px;
+    margin: 0;
   }
 `;
 
@@ -47,12 +60,29 @@ const Line = styled.div`
   width: 2px;
   height: 40px;
   background-color: lightgray;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const Block1 = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
+
+  .Dashopen {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .dashicon {
+      display: none;
+      @media (max-width: 768px) {
+        display: block;
+      }
+    }
+  }
 
   .text1 {
     font-size: 22px;
@@ -68,6 +98,53 @@ const Block1 = styled.div`
     font-weight: 600;
     color: #0073e6;
     padding-bottom: 22px;
+
     border-bottom: 3.5px solid #0073e6;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+`;
+
+const MobileTextview = styled.div`
+  display: flex;
+  height: 50px;
+  padding: 10px 0px;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  background-color: white;
+  display: none;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    display: flex;
+  }
+
+  .text3 {
+    border-bottom: 2px solid #0073e6;
+    background: #fff;
+    color: #0073e6;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding: 10px 0;
+  }
+  .text4 {
+    border-bottom: 2px solid #f6f8fa;
+    background: #fff;
+    color: #3e6493;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding: 10px 0;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    /* justify-content: start; */
   }
 `;

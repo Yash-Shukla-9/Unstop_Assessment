@@ -3,10 +3,6 @@ import { styled } from "styled-components";
 const Sidebar = () => {
   return (
     <MainConatiner>
-      <div>
-        <img src="/public/segment.png" alt="Dashbord" />
-      </div>
-
       <Blocks1>
         <img src="/dashboard.png" alt="dashboard" className="icon" />
         <span>Dashboard</span>
@@ -43,9 +39,13 @@ const MainConatiner = styled.div`
   width: 150px;
   height: 990px;
   padding: 16px 20px 20px 30px;
-
   color: #1c4984;
   background-color: #ffffff;
+
+  @media (max-width: 768px) {
+    display: none;
+    position: absolute;
+  }
 
   .icon {
     font-size: 20px;

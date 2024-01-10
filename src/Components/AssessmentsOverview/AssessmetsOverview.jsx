@@ -3,7 +3,6 @@ import TotalBlock from "./TotalBlock/TotalBlock";
 import { MdOutlineViewAgenda } from "react-icons/md";
 import { MdPeopleAlt } from "react-icons/md";
 import { TbWorldShare } from "react-icons/tb";
-
 import Candidate from "./candidates/Candidates";
 
 const AssessmentsOverview = () => {
