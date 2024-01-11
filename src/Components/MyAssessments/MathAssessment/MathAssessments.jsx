@@ -95,7 +95,7 @@ const MainContainer = styled.div`
   background-color: #fff;
 
   @media (max-width: 768px) {
-    width: 350px;
+    width: 100%;
   }
 `;
 

@@ -83,7 +83,6 @@ const Part1 = styled.div`
 const BoxIcon = styled.div`
   display: flex;
   align-items: center;
-  gap: 15px;
 `;
 
 const Block2 = styled.div`
@@ -91,7 +90,7 @@ const Block2 = styled.div`
   padding: 16px 20px;
   flex-direction: column;
   font-size: 14px;
-  width: 408px;
+  width: 100%;
   font-style: normal;
   font-weight: 600;
   color: #1c4980;

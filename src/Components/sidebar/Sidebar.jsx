@@ -1,12 +1,42 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { styled } from "styled-components";
 import { ModalContext } from "../../Context/ModalContext";
 
 const Sidebar = () => {
   const { modal, setModal } = useContext(ModalContext);
+  const storedSidebarState = localStorage.getItem("sidebarOpen");
+  const [isSidebarOpen, setIsSidebarOpen] = useState(
+    storedSidebarState
+      ? JSON.parse(storedSidebarState)
+      : window.innerWidth >= 768
+  );
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSidebarOpen(window.innerWidth >= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("sidebarOpen", JSON.stringify(isSidebarOpen));
+  }, [isSidebarOpen]);
+
+  const toggleSidebar = () => {
+    if (window.innerWidth < 768) {
+      setModal(!modal);
+    } else {
+      setIsSidebarOpen(!isSidebarOpen);
+    }
+  };
 
   const closeModal = () => {
-    setModal(!modal);
+    setModal(false);
   };
 
   return (
@@ -63,11 +93,11 @@ const MainConatiner = styled.div`
   height: 990px;
   padding: 16px 20px 20px 30px;
   color: #1c4984;
-  background-color: #ffffff;
+  background-color: white;
 
   @media (max-width: 768px) {
     position: absolute;
-    width: 300px;
+    width: 230px;
     height: 100vh;
     padding: 40px 20px 10px 20px;
     align-items: flex-start;
@@ -113,7 +143,6 @@ const Active = styled.div`
   font-size: 12px;
   color: #0073e6;
   @media (max-width: 768px) {
-    width: 100%;
     flex-direction: row;
   }
   .Activeicon {
@@ -171,7 +200,13 @@ const Menu = styled.div`
   align-items: center;
   align-self: stretch;
   padding: 10px 20px;
+  display: none;
 
+  @media (max-width: 768px) {
+    display: flex;
+  }
+
+  gap: 20px;
   .cuticon {
     cursor: pointer;
   }

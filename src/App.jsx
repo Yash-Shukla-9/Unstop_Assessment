@@ -21,8 +21,12 @@ export default App;
 
 const Main = styled.div`
   display: flex;
+
   .menu {
     flex: 1;
+    @media (max-width: 768px) {
+      /* display: none; */
+    }
   }
   .content {
     flex: 8.5;

@@ -43,8 +43,11 @@ const MainAssessment = styled.div`
   border-radius: 12px;
   border: 1px dashed #dadce0;
   background-color: #f6f8fa;
-
+  /* width: 100%; */
   height: 215px;
+  @media (max-width: 900px) {
+    width: 100%;
+  }
 
   .modal {
     position: absolute;

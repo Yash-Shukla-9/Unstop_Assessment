@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import { styled, keyframes } from "styled-components";
 import AssessmentsOverview from "../AssessmentsOverview/AssessmetsOverview";
 import Navbar from "../navbar/Navbar";
 import NewAssessment from "../MyAssessments/NewAssessment/NewAssessment";
@@ -6,6 +6,16 @@ import MathAssessments from "../MyAssessments/MathAssessment/MathAssessments";
 import { useState } from "react";
 import FilterList from "../Modal/FilterListModal/FilterList";
 
+const FilterWrapper = styled.div`
+  overflow: hidden;
+  max-height: ${(props) => (props.show ? "500px" : "0")};
+  transition: max-height 0.5s ease-in-out;
+
+  & > div {
+    transition: opacity 0.5s ease-in-out;
+    opacity: ${(props) => (props.show ? "1" : "0")};
+  }
+`;
 const Right = () => {
   const [filterlist, setFillterlist] = useState(false);
 
@@ -21,7 +31,9 @@ const Right = () => {
           <AssessmentsOverview />
         </div>
 
-        <div className="ShowFilter">{filterlist && <FilterList />}</div>
+        <FilterWrapper show={filterlist}>
+          <FilterList />
+        </FilterWrapper>
 
         <div>
           <MyAssessmentBox>
@@ -68,7 +80,7 @@ export default Right;
 
 const Content = styled.div`
   background-color: #ffffff;
-  padding: 20px;
+  padding: 20px 0;
   margin: 0 0.5rem;
   .Assessment {
     @media (max-width: 768px) {
@@ -93,8 +105,10 @@ const AssessmentSection = styled.div`
   align-items: flex-start;
   flex-wrap: wrap;
   gap: 30px;
+  margin-left: 10px;
 
   @media (max-width: 768px) {
+    margin-left: 0;
     width: 100%;
     flex-direction: column;
     padding: 20px 15px;

@@ -12,6 +12,7 @@ const AssessmentsOverview = () => {
       heading: "Total Assessment",
       number: 34,
       icons: MdOutlineViewAgenda,
+      flex: "15%",
     },
     {
       type: "Candidate",
@@ -25,6 +26,7 @@ const AssessmentsOverview = () => {
       PeopleIcon: MdPeopleAlt,
       bg: "red",
       color: "white",
+      flex: "30%",
     },
     {
       type: "Candidate",
@@ -41,12 +43,14 @@ const AssessmentsOverview = () => {
       PeopleIcon: TbWorldShare,
       bg: "blue",
       color: "yellow",
+      flex: "45%",
     },
     {
       type: "TotalBlock",
       heading: "Total Purpose",
       number: 11,
       icons: MdOutlineViewAgenda,
+      flex: "15%",
     },
   ];
 
@@ -64,9 +68,17 @@ const AssessmentsOverview = () => {
 
 const Card = ({ type, ...props }) => {
   if (type === "TotalBlock") {
-    return <TotalBlock {...props} />;
+    return (
+      <div style={{ flex: props.flex }}>
+        <TotalBlock {...props} />
+      </div>
+    );
   } else if (type === "Candidate") {
-    return <Candidate {...props} />;
+    return (
+      <div style={{ flex: props.flex }}>
+        <Candidate {...props} />
+      </div>
+    );
   }
   return null;
 };
@@ -89,6 +101,8 @@ const OverviewBox = styled.div`
   display: flex;
   border: 2px solid #dde5ea;
   border-radius: 10px;
+  flex: 1;
+  width: 100%;
 
   @media (max-width: 768px) {
     flex-direction: column;
