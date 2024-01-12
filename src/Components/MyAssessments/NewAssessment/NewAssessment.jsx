@@ -35,7 +35,7 @@ export default NewAssessment;
 
 const MainAssessment = styled.div`
   display: flex;
-  padding: 30px;
+  padding: 18px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -43,7 +43,10 @@ const MainAssessment = styled.div`
   border-radius: 12px;
   border: 1px dashed #dadce0;
   background-color: #f6f8fa;
-  width: 385px;
+  /* width: 385px; */
+  flex: 3;
+  width: calc(100% / 3);
+
   height: 215px;
   @media (max-width: 900px) {
     width: 100%;

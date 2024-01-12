@@ -31,12 +31,14 @@ const Sidebar = () => {
           <div className="main">
             <Menu>
               <span>Menu</span>
-              <img
-                src="/cut.png"
-                alt="dashboard"
-                className="cuticon"
-                onClick={closeModal}
-              />
+              <div className="Cutbox">
+                <img
+                  src="/cut.png"
+                  alt="dashboard"
+                  className="cuticon"
+                  onClick={closeModal}
+                />
+              </div>
             </Menu>
 
             <Blocks1>
@@ -65,7 +67,11 @@ const Sidebar = () => {
         </MainContainer>
       )}
 
-      {modal && <MobileSidebar closeModal={closeModal} />}
+      {
+        <Mobileview>
+          <MobileSidebar closeModal={closeModal} />
+        </Mobileview>
+      }
     </>
   );
 };
@@ -187,6 +193,8 @@ const Menu = styled.div`
   align-self: stretch;
   padding: 10px 20px;
   display: none;
+  .Cutbox {
+  }
 
   @media (max-width: 768px) {
     display: flex;
@@ -195,5 +203,13 @@ const Menu = styled.div`
   gap: 20px;
   .cuticon {
     cursor: pointer;
+  }
+`;
+
+const Mobileview = styled.div`
+  display: none;
+
+  @media (max-width: 768px) {
+    display: flex;
   }
 `;

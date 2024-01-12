@@ -107,7 +107,7 @@ const Content = styled.div`
 
 const AssessmentSection = styled.div`
   display: flex;
-  width: 1224px;
+
   align-items: flex-start;
   flex-wrap: wrap;
   gap: 30px;

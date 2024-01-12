@@ -98,10 +98,9 @@ const Block2 = styled.div`
   gap: 16px;
   flex: 1 0 0;
   align-self: stretch;
-  border-left: 2px solid #dde5ea;
 
-  @media (max-width: 765px) {
-    border-left: 0;
+  @media (max-width: 768px) {
+    margin-top: -2px;
   }
 `;
 

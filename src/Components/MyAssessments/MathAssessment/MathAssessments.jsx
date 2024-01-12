@@ -87,12 +87,15 @@ const MainContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   gap: 16px;
-  /* flex: 1 0 0; */
-  width: 388px;
+  flex: 3;
+  width: calc(100% / 3);
   align-self: stretch;
   border-radius: 12px;
   border: 1px solid #dadce0;
   background-color: #fff;
+  &:last-child {
+    width: 33%;
+  }
 
   @media (max-width: 768px) {
     width: 100%;

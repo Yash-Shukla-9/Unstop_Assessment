@@ -50,9 +50,14 @@ const Block1 = styled.div`
   gap: 16px;
   flex-shrink: 0;
   align-self: stretch;
+  border-right: 2px solid red;
 
   &:nth-child(2) {
-    border-left: 2px solid #dde5ea;
+    border-right: 2px solid blue;
+  }
+
+  @media (max-width: 768px) {
+    width: 203px;
   }
 
   .num {

@@ -39,11 +39,12 @@ const MobileSidebar = () => {
             </Blocks1>
 
             <Block2>
-              <Admin>Admin</Admin>
-
               <Blocks12>
-                <img src="/admin_meds.png" alt="dashboard" className="icon" />
-                <span>Round Status</span>
+                <div className="part1">
+                  <img src="/admin_meds.png" alt="dashboard" className="icon" />
+                  <span>Round Status</span>
+                </div>
+                <Admin>Admin</Admin>
               </Blocks12>
             </Block2>
           </div>
@@ -126,9 +127,16 @@ const Block2 = styled.div`
   align-items: center;
   font-size: 12px;
   margin: 10px;
-  gap: 16px;
+  /* gap: 50px; */
+  justify-content: space-between;
   padding: 10px 20px;
   border-top: 1px dashed lightgray;
+  .part1 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
   @media (max-width: 768px) {
     height: 50px;
     flex-direction: row-reverse;
@@ -143,7 +151,7 @@ const Blocks12 = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 10px;
+  /* margin: 10px; */
   gap: 10px;
   font-size: 12px;
   padding: 10px 0px;
@@ -153,13 +161,13 @@ const Blocks12 = styled.div`
 `;
 
 const Admin = styled.div`
-  font-size: 14px;
+  color: #d63500;
   font-weight: 500;
-  color: Red;
-  background-color: #ffefea;
-  padding: 2px 8px;
-  border: 2px solid red;
-  border-radius: 20px;
+  line-height: normal;
+  border-radius: 22px;
+  padding: 0 8px;
+  border: 1px solid var(--Accent-New-red, #d63500);
+  background: var(--Accent-red-light, #fbebea);
 `;
 
 const Menu = styled.div`

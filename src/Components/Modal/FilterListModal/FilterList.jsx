@@ -64,9 +64,9 @@ const FilterList = () => {
 const Card = ({ type, ...props }) => {
   if (type === "TotalBlock") {
     return (
-      <Border>
+      <Border1>
         <TotalBlock {...props} />
-      </Border>
+      </Border1>
     );
   } else if (type === "Candidate") {
     return (
@@ -82,7 +82,7 @@ const Assessment = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 16px;
+  /* gap: 16px; */
   margin: 0 0.5em;
   background-color: #ffffff;
   flex-wrap: wrap;
@@ -90,13 +90,27 @@ const Assessment = styled.div`
 
 const OverviewBox = styled.div`
   display: flex;
-  gap: 16px;
+  /* gap: 16px; */
   flex-wrap: wrap;
   width: 100%;
 `;
 
+const Border1 = styled.div`
+  border: 2px solid #dde5ea;
+  border-radius: 15px 0px 0px 0px;
+  &:nth-child(even) {
+    border-left: 0;
+    border-radius: 0px 15px 0px 0px;
+  }
+`;
 const Border = styled.div`
-  border: 2px solid red;
+  border: 2px solid #dde5ea;
+  border-bottom: 0;
+  border-top: 0;
+  &:nth-child(even) {
+    border: 2px solid #dde5ea;
+    border-radius: 0 0px 15px 15px;
+  }
 `;
 
 export default FilterList;
