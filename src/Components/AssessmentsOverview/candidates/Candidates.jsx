@@ -98,10 +98,6 @@ const Block2 = styled.div`
   flex: 1 0 0;
   width: 408px;
   align-self: stretch;
-
-  @media (max-width: 768px) {
-    /* margin-top: -2px; */
-  }
 `;
 
 const Line = styled.div`

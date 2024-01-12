@@ -117,13 +117,13 @@ const OverviewBox = styled.div`
 
 const Border = styled.div`
   border: 2px solid #dde5ea;
-  border-bottom: 0;
-  border-top: 0;
+  /* border-bottom: 0; */
+  /* border-top: 0; */
   margin: -1px;
-  &:nth-child(even) {
+  /* &:nth-child(even) {
     border: 2px solid red;
     border-radius: 0 0px 15px 15px;
-  }
+  } */
 `;
 
 export default AssessmentsOverview;
