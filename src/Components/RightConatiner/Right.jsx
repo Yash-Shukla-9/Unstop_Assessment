@@ -92,7 +92,7 @@ const Content = styled.div`
     @media (max-width: 768px) {
       display: none;
       margin: 0 0;
-      padding: 20px 15px;
+      padding: 20px 0;
     }
   }
 

@@ -13,7 +13,7 @@ const Navbar = () => {
           <div>
             <div className="Dashopen">
               <img
-                src="/public/segment.png"
+                src="/segment.png"
                 className="dashicon"
                 alt="Dashbord"
                 onClick={closeModal}
@@ -57,7 +57,7 @@ const Nav = styled.div`
   @media (max-width: 768px) {
     width: 100%;
     height: 50px;
-    padding: 0px 35px;
+    padding-left: 30px;
     margin: 0;
   }
 `;

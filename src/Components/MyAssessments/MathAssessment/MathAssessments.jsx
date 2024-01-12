@@ -64,7 +64,7 @@ const MathAssessments = () => {
           </div>
           <Sharebox>
             <Share>
-              <img src="/public/link.png" alt="link icon" />
+              <img src="/link.png" alt="link icon" />
               <div>Share</div>
             </Share>
             <div className="circle-parent">
