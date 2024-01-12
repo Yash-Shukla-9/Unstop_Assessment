@@ -88,6 +88,7 @@ const MainContainer = styled.div`
   background-color: white;
 
   @media (max-width: 768px) {
+    display: none;
     position: absolute;
     width: 230px;
     height: 100vh;
@@ -207,8 +208,6 @@ const Menu = styled.div`
 `;
 
 const Mobileview = styled.div`
-  display: none;
-
   @media (max-width: 768px) {
     display: flex;
   }

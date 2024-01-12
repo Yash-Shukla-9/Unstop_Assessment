@@ -3,7 +3,7 @@ import { createContext, useState } from "react";
 const ModalContext = createContext();
 
 const ModalProvider = ({ children }) => {
-  const [modal, setModal] = useState(true);
+  const [modal, setModal] = useState(false);
 
   const closeModal = () => {
     setModal(!modal);

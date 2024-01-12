@@ -25,10 +25,14 @@ const Main = styled.div`
   .menu {
     flex: 1;
     @media (max-width: 768px) {
-      /* display: none; */
+      flex: 0;
     }
   }
   .content {
     flex: 8.5;
+    @media (max-width: 768px) {
+      /* display: none; */
+      flex: 1;
+    }
   }
 `;

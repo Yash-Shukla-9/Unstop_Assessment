@@ -89,7 +89,6 @@ const ModalContent = styled.div`
   overflow-y: auto;
   animation: slideIn 0.3s ease forwards;
   width: 600px;
-  min-height: 100vh;
   overflow: auto;
   scrollbar-width: thin;
   scrollbar-color: transparent transparent;

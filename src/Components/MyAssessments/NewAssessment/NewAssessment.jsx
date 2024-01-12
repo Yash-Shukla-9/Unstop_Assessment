@@ -44,8 +44,7 @@ const MainAssessment = styled.div`
   border: 1px dashed #dadce0;
   background-color: #f6f8fa;
   /* width: 385px; */
-  flex: 3;
-  width: calc(100% / 3);
+  flex: 30%;
 
   height: 215px;
   @media (max-width: 900px) {

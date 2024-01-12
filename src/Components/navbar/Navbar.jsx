@@ -12,12 +12,31 @@ const Navbar = () => {
         <Block1>
           <div>
             <div className="Dashopen">
-              <img
-                src="/segment.png"
-                className="dashicon"
-                alt="Dashbord"
+              <svg
                 onClick={closeModal}
-              />
+                xmlns="http://www.w3.org/2000/svg"
+                width="40"
+                height="40"
+                fill="none"
+                viewBox="0 0 40 40"
+              >
+                <rect width="40" height="40" fill="#F2F8FE" rx="20"></rect>
+                <g clipPath="url(#clip0_0_955)">
+                  <path
+                    fill="#1C4980"
+                    d="M23.75 27.5h-15V25h15v2.5zm7.5-15V15H8.75v-2.5h22.5zm-7.5 8.75h-15v-2.5h15v2.5z"
+                  ></path>
+                </g>
+                <defs>
+                  <clipPath id="clip0_0_955">
+                    <path
+                      fill="#fff"
+                      d="M0 0H30V30H0z"
+                      transform="matrix(-1 0 0 1 35 5)"
+                    ></path>
+                  </clipPath>
+                </defs>
+              </svg>
               <span className="text1">Assessment</span>
             </div>
           </div>

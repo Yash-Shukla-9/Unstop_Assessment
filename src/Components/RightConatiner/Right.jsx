@@ -107,10 +107,8 @@ const Content = styled.div`
 `;
 
 const AssessmentSection = styled.div`
-  display: flex;
-
-  align-items: flex-start;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(390px, 1fr));
   gap: 30px;
   margin-left: 10px;
 
@@ -125,9 +123,13 @@ const AssessmentSection = styled.div`
 `;
 
 const MyAssessmentBox = styled.div`
+  padding: 0 8px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  h2 {
+    padding: 0;
+  }
 
   .iconbox {
     display: flex;
