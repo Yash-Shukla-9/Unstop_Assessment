@@ -68,7 +68,7 @@ const MainConatiner = styled.div`
   @media (max-width: 768px) {
     position: absolute;
     width: 230px;
-    height: 100vh;
+    height: 1500px;
     padding: 40px 20px 10px 20px;
     align-items: flex-start;
     gap: 10px;

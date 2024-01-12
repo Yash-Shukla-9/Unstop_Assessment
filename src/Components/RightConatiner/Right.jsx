@@ -84,6 +84,7 @@ const Content = styled.div`
 
   margin: 0 0.5rem;
   @media (max-width: 768px) {
+    padding: 20px 0;
     margin: 0 0;
   }
 

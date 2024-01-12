@@ -96,20 +96,24 @@ const OverviewBox = styled.div`
 `;
 
 const Border1 = styled.div`
-  border: 2px solid #dde5ea;
-  border-radius: 15px 0px 0px 0px;
-  &:nth-child(even) {
-    border-left: 0;
-    border-radius: 0px 15px 0px 0px;
+  @media (max-width: 768px) {
+    border: 2px solid #dde5ea;
+    border-radius: 15px 0px 0px 0px;
+    &:nth-child(even) {
+      border-left: 0;
+      border-radius: 0px 15px 0px 0px;
+    }
   }
 `;
 const Border = styled.div`
-  border: 2px solid #dde5ea;
-  border-bottom: 0;
-  border-top: 0;
-  &:nth-child(even) {
+  @media (max-width: 768px) {
     border: 2px solid #dde5ea;
-    border-radius: 0 0px 15px 15px;
+    border-bottom: 0;
+    border-top: 0;
+    &:nth-child(even) {
+      border: 2px solid #dde5ea;
+      border-radius: 0 0px 15px 15px;
+    }
   }
 `;
 

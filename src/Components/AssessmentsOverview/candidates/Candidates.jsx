@@ -90,17 +90,17 @@ const Block2 = styled.div`
   padding: 16px 20px;
   flex-direction: column;
   font-size: 14px;
-  width: 408px;
   font-style: normal;
   font-weight: 600;
   color: #1c4980;
   align-items: flex-start;
   gap: 16px;
   flex: 1 0 0;
+  width: 408px;
   align-self: stretch;
 
   @media (max-width: 768px) {
-    margin-top: -2px;
+    /* margin-top: -2px; */
   }
 `;
 
