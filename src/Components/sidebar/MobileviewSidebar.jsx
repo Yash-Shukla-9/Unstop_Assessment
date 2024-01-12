@@ -1,33 +1,17 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { styled } from "styled-components";
 import { ModalContext } from "../../Context/ModalContext";
-import MobileSidebar from "./MobileviewSidebar";
 
-const Sidebar = () => {
+const MobileSidebar = () => {
   const { modal, setModal } = useContext(ModalContext);
-  const [isDesktopSidebarOpen, setIsDesktopSidebarOpen] = useState(
-    window.innerWidth >= 768
-  );
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsDesktopSidebarOpen(window.innerWidth >= 768);
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   const closeModal = () => {
     setModal(false);
   };
-
   return (
     <>
-      {isDesktopSidebarOpen && (
-        <MainContainer>
+      {modal && (
+        <MainConatiner>
           <div className="main">
             <Menu>
               <span>Menu</span>
@@ -56,23 +40,22 @@ const Sidebar = () => {
 
             <Block2>
               <Admin>Admin</Admin>
+
               <Blocks12>
                 <img src="/admin_meds.png" alt="dashboard" className="icon" />
                 <span>Round Status</span>
               </Blocks12>
             </Block2>
           </div>
-        </MainContainer>
+        </MainConatiner>
       )}
-
-      {modal && <MobileSidebar closeModal={closeModal} />}
     </>
   );
 };
 
-export default Sidebar;
+export default MobileSidebar;
 
-const MainContainer = styled.div`
+const MainConatiner = styled.div`
   display: flex;
   flex-direction: column;
   width: 150px;

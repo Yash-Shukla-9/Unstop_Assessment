@@ -13,14 +13,12 @@ const FilterList = () => {
       number: 34,
       icons: MdOutlineViewAgenda,
     },
-
     {
       type: "TotalBlock",
       heading: "Total Purpose",
       number: 11,
       icons: MdOutlineViewAgenda,
     },
-
     {
       type: "Candidate",
       heading: "Candidate",
@@ -66,15 +64,15 @@ const FilterList = () => {
 const Card = ({ type, ...props }) => {
   if (type === "TotalBlock") {
     return (
-      <Totalborder>
+      <Border>
         <TotalBlock {...props} />
-      </Totalborder>
+      </Border>
     );
   } else if (type === "Candidate") {
     return (
-      <Candidateborder>
+      <Border>
         <Candidate {...props} />
-      </Candidateborder>
+      </Border>
     );
   }
   return null;
@@ -92,32 +90,13 @@ const Assessment = styled.div`
 
 const OverviewBox = styled.div`
   display: flex;
-  border: 2px solid #dde5ea;
-  border-radius: 10px;
-  width: 100%;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-  }
-`;
-
-const Totalborder = styled.div`
-  border-bottom: 2px solid #dde5ea;
-  border-left: 0;
+  gap: 16px;
+  flex-wrap: wrap;
   width: 100%;
 `;
 
-const Candidateborder = styled.div`
-  &:nth-child(odd) {
-    border-top: 0;
-    border-left: 0;
-    border-right: 0;
-  }
-  width: 100%;
-
-  border-top: 2px solid #dde5ea;
-  border-left: 0;
-  border-right: 0;
+const Border = styled.div`
+  border: 2px solid red;
 `;
 
 export default FilterList;

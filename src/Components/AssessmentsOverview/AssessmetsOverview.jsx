@@ -26,7 +26,7 @@ const AssessmentsOverview = () => {
       PeopleIcon: MdPeopleAlt,
       bg: "red",
       color: "white",
-      flex: "30%",
+      flex: "15%",
     },
     {
       type: "Candidate",
@@ -43,7 +43,7 @@ const AssessmentsOverview = () => {
       PeopleIcon: TbWorldShare,
       bg: "blue",
       color: "yellow",
-      flex: "45%",
+      flex: "15%",
     },
     {
       type: "TotalBlock",
@@ -95,6 +95,9 @@ const Assessment = styled.div`
 
 const Heading = styled.div`
   color: #1c4980;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 140%;
 `;
 
 const OverviewBox = styled.div`
@@ -105,6 +108,7 @@ const OverviewBox = styled.div`
   width: 100%;
 
   @media (max-width: 768px) {
+    width: 100%;
     flex-direction: column;
   }
 `;

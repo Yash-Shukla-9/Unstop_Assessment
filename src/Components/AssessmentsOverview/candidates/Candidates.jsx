@@ -45,7 +45,6 @@ const renderInfoBlock = (number, title, smallNum) => (
 );
 
 export default Candidate;
-
 const IconContainer = styled.div`
   display: flex;
   width: 40px;
@@ -83,6 +82,7 @@ const Part1 = styled.div`
 const BoxIcon = styled.div`
   display: flex;
   align-items: center;
+  gap: 15px;
 `;
 
 const Block2 = styled.div`
@@ -90,7 +90,7 @@ const Block2 = styled.div`
   padding: 16px 20px;
   flex-direction: column;
   font-size: 14px;
-  width: 100%;
+  width: 408px;
   font-style: normal;
   font-weight: 600;
   color: #1c4980;
@@ -99,6 +99,10 @@ const Block2 = styled.div`
   flex: 1 0 0;
   align-self: stretch;
   border-left: 2px solid #dde5ea;
+
+  @media (max-width: 765px) {
+    border-left: 0;
+  }
 `;
 
 const Line = styled.div`

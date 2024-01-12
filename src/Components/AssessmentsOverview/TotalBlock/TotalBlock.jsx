@@ -51,7 +51,7 @@ const Block1 = styled.div`
   flex-shrink: 0;
   align-self: stretch;
 
-  &:nth-child(even) {
+  &:nth-child(2) {
     border-left: 2px solid #dde5ea;
   }
 

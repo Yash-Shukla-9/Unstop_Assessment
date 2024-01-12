@@ -80,8 +80,13 @@ export default Right;
 
 const Content = styled.div`
   background-color: #ffffff;
-  padding: 20px 0;
+  padding: 20px 10px;
+
   margin: 0 0.5rem;
+  @media (max-width: 768px) {
+    margin: 0 0;
+  }
+
   .Assessment {
     @media (max-width: 768px) {
       display: none;
@@ -93,6 +98,7 @@ const Content = styled.div`
   .sec-heading {
     padding: 15px;
     color: #1c4980;
+    font-size: 18px;
     @media (max-width: 768px) {
       font-size: 16px;
     }
