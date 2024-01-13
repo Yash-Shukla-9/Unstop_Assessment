@@ -43,7 +43,6 @@ const MainAssessment = styled.div`
   border-radius: 12px;
   border: 1px dashed #dadce0;
   background-color: #f6f8fa;
-  /* width: 385px; */
   flex: 30%;
 
   height: 215px;
@@ -66,29 +65,39 @@ const MainAssessment = styled.div`
     gap: 10px;
     border-radius: 72px;
     background: #fff;
-
+    @media (max-width: 768px) {
+      width: 55px;
+      height: 55px;
+    }
     .icon {
       width: 30px;
       height: 30px;
       color: #0073e6;
+      @media (max-width: 768px) {
+        width: 22px;
+        height: 22px;
+      }
     }
   }
 `;
 
 const TextBox = styled.div`
   text-align: center;
-  /* font-family: Inter; */
   font-size: 18px;
-
   font-weight: 500;
   line-height: normal;
   color: #1c4980;
-
+  @media (max-width: 768px) {
+    font-size: 17px;
+  }
   .child-text {
     color: #1c4980;
     font-size: 14px;
     font-weight: 500;
     line-height: normal;
     padding-top: 12px;
+    @media (max-width: 768px) {
+      font-size: 13px;
+    }
   }
 `;

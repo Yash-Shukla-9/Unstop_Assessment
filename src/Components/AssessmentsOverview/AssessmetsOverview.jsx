@@ -4,6 +4,8 @@ import { MdOutlineViewAgenda } from "react-icons/md";
 import { MdPeopleAlt } from "react-icons/md";
 import { TbWorldShare } from "react-icons/tb";
 import Candidate from "./candidates/Candidates";
+import People from "../../../public/people.png";
+import Website from "../../../public/web.png";
 
 const AssessmentsOverview = () => {
   const cardData = [

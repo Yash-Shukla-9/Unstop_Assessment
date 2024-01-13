@@ -18,9 +18,11 @@ const FilterWrapper = styled.div`
 `;
 const Right = () => {
   const [filterlist, setFillterlist] = useState(false);
+  const [isActive, setIsActive] = useState(false);
 
   const OpenFilterModal = () => {
     setFillterlist(!filterlist);
+    setIsActive(!isActive);
   };
 
   return (
@@ -51,14 +53,14 @@ const Right = () => {
                 />
               </div>
 
-              <div className="icon3box">
+              <StyledIconBox className={isActive ? "active" : ""}>
                 <img
-                  src="/bar_chart.jpg"
+                  src={isActive ? "/bar_chart.jpg" : "/bar_chartdar.png"}
                   alt="search"
                   className="icon3"
                   onClick={OpenFilterModal}
                 />
-              </div>
+              </StyledIconBox>
             </div>
           </MyAssessmentBox>
           <AssessmentSection>
@@ -100,9 +102,6 @@ const Content = styled.div`
     padding: 15px;
     color: #1c4980;
     font-size: 18px;
-    @media (max-width: 768px) {
-      font-size: 16px;
-    }
   }
 `;
 
@@ -119,6 +118,31 @@ const AssessmentSection = styled.div`
     padding: 20px 15px;
     align-items: flex-start;
     gap: 20px;
+  }
+`;
+
+const StyledIconBox = styled.div`
+  display: flex;
+  width: 40px;
+  height: 40px;
+  padding: 4px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: white;
+  border-radius: 50%;
+
+  &.active {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    padding: 4px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 50px;
+    border: 1px solid #0073e6;
+    background: #f2f8fe;
   }
 `;
 
@@ -143,18 +167,6 @@ const MyAssessmentBox = styled.div`
     background: #fff;
   }
 
-  .icon3box {
-    display: flex;
-    width: 40px;
-    height: 40px;
-    padding: 4px;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    border-radius: 50px;
-    border: 1px solid #0073e6;
-    background: #f2f8fe;
-  }
   .iconBox {
     display: flex;
     align-items: center;
