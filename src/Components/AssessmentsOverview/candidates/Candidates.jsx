@@ -1,6 +1,7 @@
 import React from "react";
 import { styled } from "styled-components";
-
+import People from "../../../../public/people.png";
+import Web from "../../../../public/web.png";
 const Candidate = ({
   heading,
   number,
@@ -9,7 +10,9 @@ const Candidate = ({
   title2,
   number3,
   title3,
-  PeopleIcon,
+  image,
+  bg,
+  color,
   smallnum1,
   smallnum2,
   smallnum3,
@@ -18,11 +21,20 @@ const Candidate = ({
     <Block2>
       <span>{heading}</span>
       <BoxIcon>
-        {PeopleIcon && (
+        {/* {Icon && (
           <IconContainer>
-            <PeopleIcon className="icon" />
+            <IconContainer>
+              <img src={icon} alt="Icon" className="icon" />
+              <Icon className="icon" />
+            </IconContainer>
           </IconContainer>
+        )} */}
+        {image === People ? (
+          <img src={People} alt="People Icon" className="icon" />
+        ) : (
+          <img src={Web} alt="Web Icon" className="icon" />
         )}
+
         {renderInfoBlock(number, title1, smallnum1)}
         {number2 && title2 && renderInfoBlock(number2, title2, smallnum2)}
         {number3 && title3 && renderInfoBlock(number3, title3, smallnum3)}
@@ -52,11 +64,11 @@ const IconContainer = styled.div`
   padding: 10px;
   justify-content: center;
   align-items: center;
-  background-color: ${(props) => (props.bg ? props.bg : "#ebe8fd")};
+  background-color: ${(props) => props.bg};
   border-radius: 6px;
   .icon {
-    color: ${(props) => (props.color ? props.color : "#6548ee")};
-    font-size: 20px;
+    width: 100%;
+    height: 100%;
   }
 `;
 

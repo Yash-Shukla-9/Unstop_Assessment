@@ -1,9 +1,9 @@
 import { styled } from "styled-components";
 import { MdOutlineViewAgenda } from "react-icons/md";
-import { MdPeopleAlt } from "react-icons/md";
-import { TbWorldShare } from "react-icons/tb";
 import TotalBlock from "../../AssessmentsOverview/TotalBlock/TotalBlock";
 import Candidate from "../../AssessmentsOverview/candidates/Candidates";
+import People from "../../../../public/people.png";
+import Web from "../../../../public/web.png";
 
 const FilterList = () => {
   const cardData = [
@@ -28,7 +28,8 @@ const FilterList = () => {
       number2: "1,14",
       smallnum1: "+89",
       smallnum2: "+89",
-      PeopleIcon: MdPeopleAlt,
+      smallnum2: "+89",
+      image: People,
       bg: "red",
       color: "white",
     },
@@ -44,7 +45,7 @@ const FilterList = () => {
       smallnum1: "+89",
       smallnum2: "+89",
       smallnum3: "+89",
-      PeopleIcon: TbWorldShare,
+      image: Web,
       bg: "blue",
       color: "yellow",
     },

@@ -1,11 +1,9 @@
 import { styled } from "styled-components";
 import TotalBlock from "./TotalBlock/TotalBlock";
 import { MdOutlineViewAgenda } from "react-icons/md";
-import { MdPeopleAlt } from "react-icons/md";
-import { TbWorldShare } from "react-icons/tb";
 import Candidate from "./candidates/Candidates";
 import People from "../../../public/people.png";
-import Website from "../../../public/web.png";
+import Web from "../../../public/web.png";
 
 const AssessmentsOverview = () => {
   const cardData = [
@@ -25,7 +23,7 @@ const AssessmentsOverview = () => {
       number2: "1,14",
       smallnum1: "+89",
       smallnum2: "+89",
-      PeopleIcon: MdPeopleAlt,
+      image: People,
       bg: "red",
       color: "white",
       flex: "15%",
@@ -42,7 +40,7 @@ const AssessmentsOverview = () => {
       smallnum1: "+89",
       smallnum2: "+89",
       smallnum3: "+89",
-      PeopleIcon: TbWorldShare,
+      image: Web,
       bg: "blue",
       color: "yellow",
       flex: "15%",

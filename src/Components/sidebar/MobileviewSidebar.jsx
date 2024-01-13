@@ -76,7 +76,7 @@ const MainConatiner = styled.div`
   }
 
   .icon {
-    font-size: 20px;
+    font-size: 22px;
   }
 `;
 
@@ -86,7 +86,7 @@ const Blocks1 = styled.div`
   align-items: center;
   margin: 10px;
   gap: 10px;
-  font-size: 12px;
+  font-size: 14px;
   padding: 10px 0px;
 
   @media (max-width: 768px) {
@@ -110,13 +110,14 @@ const Active = styled.div`
   border-radius: 8px;
   border: 1px solid #0073e6;
   background: #e5f1fc;
-  font-size: 12px;
+  margin-left: 19px;
+  font-size: 14px;
   color: #0073e6;
   @media (max-width: 768px) {
     flex-direction: row;
   }
   .Activeicon {
-    font-size: 20px;
+    font-size: 22px;
     color: #0073e6;
   }
 `;
