@@ -99,6 +99,15 @@ const OverviewBox = styled.div`
 const Border1 = styled.div`
   @media (max-width: 768px) {
     border: 2px solid #dde5ea;
+    border-radius: 15px 15px 0px 0px;
+    &:nth-child(even) {
+      border-radius: 0px 0px 0px 0px;
+      border-top: 0;
+    }
+  }
+
+  @media (max-width: 480px) {
+    border: 2px solid #dde5ea;
     border-radius: 15px 0px 0px 0px;
     &:nth-child(even) {
       border-left: 0;
