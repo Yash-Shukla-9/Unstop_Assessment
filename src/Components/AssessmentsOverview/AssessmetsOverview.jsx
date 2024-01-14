@@ -4,56 +4,77 @@ import { MdOutlineViewAgenda } from "react-icons/md";
 import Candidate from "./candidates/Candidates";
 import People from "../../../public/people.png";
 import Web from "../../../public/web.png";
+import { useEffect, useState } from "react";
+const cardData = [
+  {
+    type: "TotalBlock",
+    heading: "Total Assessment",
+    number: 34,
+    icons: MdOutlineViewAgenda,
+    flex: "12%",
+    orderMobile: 1,
+    orderDesktop: 1,
+  },
+  {
+    type: "Candidate",
+    heading: "Candidate",
+    title1: "Total Candidate",
+    title2: "Who Attamped",
+    number: "11,145",
+    number2: "1,14",
+    smallnum1: "+89",
+    smallnum2: "+89",
+    image: People,
+    bg: "red",
+    color: "white",
+    flex: "26%",
+    orderMobile: 3,
+    orderDesktop: 2,
+  },
+  {
+    type: "Candidate",
+    heading: "Candidate Source",
+    title1: "Email",
+    title2: "Social Share",
+    number: "11,000",
+    number2: "145",
+    number3: 145,
+    title3: "Unique Link",
+    smallnum1: "+89",
+    smallnum2: "+89",
+    smallnum3: "+89",
+    image: Web,
+    bg: "blue",
+    color: "yellow",
+    flex: "38%",
+    orderMobile: 4,
+    orderDesktop: 3,
+  },
+  {
+    type: "TotalBlock",
+    heading: "Total Purpose",
+    number: 11,
+    icons: MdOutlineViewAgenda,
+    flex: "10%",
+    orderMobile: 2,
+    orderDesktop: 4,
+  },
+];
 
 const AssessmentsOverview = () => {
-  const cardData = [
-    {
-      type: "TotalBlock",
-      heading: "Total Assessment",
-      number: 34,
-      icons: MdOutlineViewAgenda,
-      flex: "15%",
-    },
-    {
-      type: "Candidate",
-      heading: "Candidate",
-      title1: "Total Candidate",
-      title2: "Who Attamped",
-      number: "11,145",
-      number2: "1,14",
-      smallnum1: "+89",
-      smallnum2: "+89",
-      image: People,
-      bg: "red",
-      color: "white",
-      flex: "15%",
-    },
-    {
-      type: "Candidate",
-      heading: "Candidate Source",
-      title1: "Email",
-      title2: "Social Share",
-      number: "11,000",
-      number2: "145",
-      number3: 145,
-      title3: "Unique Link",
-      smallnum1: "+89",
-      smallnum2: "+89",
-      smallnum3: "+89",
-      image: Web,
-      bg: "blue",
-      color: "yellow",
-      flex: "15%",
-    },
-    {
-      type: "TotalBlock",
-      heading: "Total Purpose",
-      number: 11,
-      icons: MdOutlineViewAgenda,
-      flex: "15%",
-    },
-  ];
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   return (
     <Assessment>
       <Heading>Assessments Overview</Heading>
@@ -66,23 +87,40 @@ const AssessmentsOverview = () => {
   );
 };
 
+// const Card = ({ type, ...props }) => {
+//   if (type === "TotalBlock") {
+//     return (
+//       <div style={{ flex: props.flex }}>
+//         <TotalBlock {...props} />
+//       </div>
+//     );
+//   } else if (type === "Candidate") {
+//     return (
+//       <div style={{ flex: props.flex }}>
+//         <Border>
+//           <Candidate {...props} />
+//         </Border>
+//       </div>
+//     );
+//   }
+//   return null;
+// };
+
 const Card = ({ type, ...props }) => {
-  if (type === "TotalBlock") {
-    return (
-      <div style={{ flex: props.flex }}>
+  const order =
+    props.windowWidth <= 768 ? props.orderMobile : props.orderDesktop;
+
+  return (
+    <div style={{ flex: props.flex, order: order }}>
+      {type === "TotalBlock" ? (
         <TotalBlock {...props} />
-      </div>
-    );
-  } else if (type === "Candidate") {
-    return (
-      <div style={{ flex: props.flex }}>
+      ) : type === "Candidate" ? (
         <Border>
           <Candidate {...props} />
         </Border>
-      </div>
-    );
-  }
-  return null;
+      ) : null}
+    </div>
+  );
 };
 
 const Assessment = styled.div`

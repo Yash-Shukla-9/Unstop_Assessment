@@ -51,13 +51,15 @@ const Block1 = styled.div`
   gap: 16px;
   flex-shrink: 0;
   align-self: stretch;
-  width: 203px;
+  /* width: 203px; */
 
   @media (max-width: 768px) {
     width: 369px;
+    order: 1;
   }
   @media (max-width: 480px) {
     width: 203px;
+    order: 1;
   }
   .num {
     color: #1c4980;
