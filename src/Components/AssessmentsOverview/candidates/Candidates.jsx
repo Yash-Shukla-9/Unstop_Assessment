@@ -100,8 +100,16 @@ const Block2 = styled.div`
   align-items: flex-start;
   gap: 16px;
   flex: 1 0 0;
-  width: 408px;
   align-self: stretch;
+  width: 408px;
+
+  @media (max-width: 768px) {
+    width: 740px;
+  }
+
+  @media (max-width: 480px) {
+    width: 408px;
+  }
 `;
 
 const Line = styled.div`

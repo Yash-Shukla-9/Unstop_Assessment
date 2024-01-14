@@ -39,6 +39,7 @@ const BoxIcon = styled.div`
 
 const Block1 = styled.div`
   display: flex;
+
   width: 172px;
   padding: 16px 20px;
   flex-direction: column;
@@ -50,10 +51,14 @@ const Block1 = styled.div`
   gap: 16px;
   flex-shrink: 0;
   align-self: stretch;
+  width: 203px;
+
   @media (max-width: 768px) {
+    width: 740px;
+  }
+  @media (max-width: 480px) {
     width: 203px;
   }
-
   .num {
     color: #1c4980;
     font-size: 20px;
