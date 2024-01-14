@@ -23,7 +23,9 @@ const Main = styled.div`
   display: flex;
 
   .menu {
-    flex: 1;
+    position: sticky;
+    top: 0;
+    height: 100vh;
     @media (max-width: 768px) {
       flex: 0;
     }
@@ -31,7 +33,6 @@ const Main = styled.div`
   .content {
     flex: 8.5;
     @media (max-width: 768px) {
-      /* display: none; */
       flex: 1;
     }
   }

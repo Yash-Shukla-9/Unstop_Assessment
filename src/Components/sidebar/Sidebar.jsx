@@ -86,6 +86,8 @@ const MainContainer = styled.div`
   padding: 16px 20px 20px 30px;
   color: #1c4984;
   background-color: white;
+  position: sticky;
+  top: 5px;
 
   @media (max-width: 768px) {
     display: none;
