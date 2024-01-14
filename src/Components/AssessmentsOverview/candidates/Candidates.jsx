@@ -21,14 +21,6 @@ const Candidate = ({
     <Block2>
       <span>{heading}</span>
       <BoxIcon>
-        {/* {Icon && (
-          <IconContainer>
-            <IconContainer>
-              <img src={icon} alt="Icon" className="icon" />
-              <Icon className="icon" />
-            </IconContainer>
-          </IconContainer>
-        )} */}
         {image === People ? (
           <img src={People} alt="People Icon" className="icon" />
         ) : (

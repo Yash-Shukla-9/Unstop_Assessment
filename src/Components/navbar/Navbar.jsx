@@ -48,8 +48,15 @@ const Navbar = () => {
         </Block1>
       </Nav>
       <MobileTextview>
-        <div className="text3">My Assessments</div>
-        <div className="text4">Unstop Assessments</div>
+        <div className="text-box">
+          <div className="text3">My Assessments</div>
+          <div className="bottom-line"></div>
+        </div>
+
+        <div className="text-box">
+          <div className="text4">Unstop Assessments</div>
+          <div className="bottom-line2"></div>
+        </div>
       </MobileTextview>
     </div>
   );
@@ -138,7 +145,7 @@ const MobileTextview = styled.div`
   padding: 10px 0px;
   justify-content: center;
   align-items: center;
-  gap: 50px;
+  gap: 10px;
   background-color: white;
   display: none;
   width: 100%;
@@ -147,21 +154,41 @@ const MobileTextview = styled.div`
     display: flex;
   }
 
+  .text-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
   .text3 {
-    border-bottom: 2px solid #0073e6;
     background: #fff;
     color: #0073e6;
-    font-size: 18px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
     padding: 10px 0;
   }
+
+  .bottom-line {
+    /* width: 208px; */
+    width: 100%;
+    height: 2px;
+    background-color: #0073e6;
+  }
+
+  .bottom-line2 {
+    /* width: 208px; */
+    width: 100%;
+    height: 2px;
+    background-color: #f6f8fa;
+  }
+
   .text4 {
-    border-bottom: 2px solid #f6f8fa;
     background: #fff;
     color: #3e6493;
-    font-size: 18px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
