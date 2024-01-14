@@ -54,7 +54,7 @@ const Block1 = styled.div`
   width: 203px;
 
   @media (max-width: 768px) {
-    width: 740px;
+    width: 369px;
   }
   @media (max-width: 480px) {
     width: 203px;

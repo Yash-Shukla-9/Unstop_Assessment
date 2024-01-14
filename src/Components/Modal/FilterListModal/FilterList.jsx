@@ -83,15 +83,16 @@ const Assessment = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  /* gap: 16px; */
   margin: 0 0.5em;
   background-color: #ffffff;
   flex-wrap: wrap;
+  @media (min-width: 768px) {
+    display: none;
+  }
 `;
 
 const OverviewBox = styled.div`
   display: flex;
-  /* gap: 16px; */
   flex-wrap: wrap;
   width: 100%;
 `;
@@ -99,10 +100,10 @@ const OverviewBox = styled.div`
 const Border1 = styled.div`
   @media (max-width: 768px) {
     border: 2px solid #dde5ea;
-    border-radius: 15px 15px 0px 0px;
+    border-radius: 15px 0px 0px 0px;
     &:nth-child(even) {
-      border-radius: 0px 0px 0px 0px;
-      border-top: 0;
+      border-radius: 0px 15px 0px 0px;
+      border-left: 0;
     }
   }
 
@@ -112,7 +113,6 @@ const Border1 = styled.div`
     &:nth-child(even) {
       border-left: 0;
       border-top: 2px solid #dde5ea;
-
       border-radius: 0px 15px 0px 0px;
     }
   }
