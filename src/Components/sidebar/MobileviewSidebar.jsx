@@ -87,7 +87,7 @@ const Blocks1 = styled.div`
   margin: 10px;
   gap: 10px;
   font-size: 14px;
-  padding: 10px 0px;
+  padding: 12px 0px;
 
   @media (max-width: 768px) {
     height: 50px;
@@ -106,11 +106,10 @@ const Active = styled.div`
   align-items: center;
   margin: 10px;
   gap: 10px;
-  padding: 10px 0px;
+  padding: 12px;
   border-radius: 8px;
   border: 1px solid #0073e6;
   background: #e5f1fc;
-  margin-left: 19px;
   font-size: 14px;
   color: #0073e6;
   @media (max-width: 768px) {

@@ -51,9 +51,12 @@ const Block1 = styled.div`
   gap: 16px;
   flex-shrink: 0;
   align-self: stretch;
-
+  @media (max-width: 1024px) {
+    order: 2;
+  }
   @media (max-width: 768px) {
-    width: 203px;
+    /* width: 203px; */
+    flex: 5;
   }
 
   .num {

@@ -108,6 +108,7 @@ const OverviewBox = styled.div`
   border-radius: 10px;
   flex: 1;
   width: 100%;
+  flex-wrap: wrap;
 
   @media (max-width: 768px) {
     width: 100%;
