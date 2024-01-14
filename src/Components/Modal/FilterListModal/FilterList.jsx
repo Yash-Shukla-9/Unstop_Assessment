@@ -111,6 +111,8 @@ const Border1 = styled.div`
     border-radius: 15px 0px 0px 0px;
     &:nth-child(even) {
       border-left: 0;
+      border-top: 2px solid #dde5ea;
+
       border-radius: 0px 15px 0px 0px;
     }
   }
