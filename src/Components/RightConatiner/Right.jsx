@@ -54,7 +54,7 @@ const Right = () => {
 
               <StyledIconBox className={isActive ? "active" : ""}>
                 <img
-                  src={isActive ? "/bar_chart.jpg" : "/public/bar_chartdar.png"}
+                  src={isActive ? "/bar_chart.jpg" : "/bar_chartdar.png"}
                   alt="search"
                   className="icon3"
                   onClick={OpenFilterModal}
