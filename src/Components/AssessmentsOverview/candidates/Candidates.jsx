@@ -101,17 +101,6 @@ const Block2 = styled.div`
   gap: 16px;
   flex: 1 0 0;
   align-self: stretch;
-  /* width: 408px; */
-
-  @media (max-width: 768px) {
-    /* width: 740px; */
-    order: 3;
-  }
-
-  @media (max-width: 480px) {
-    /* width: 408px; */
-    order: 3;
-  }
 `;
 
 const Line = styled.div`

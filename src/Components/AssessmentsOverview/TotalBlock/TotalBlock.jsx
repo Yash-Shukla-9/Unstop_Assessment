@@ -40,7 +40,7 @@ const BoxIcon = styled.div`
 const Block1 = styled.div`
   display: flex;
 
-  width: 172px;
+  /* width: 172px; */
   padding: 16px 20px;
   flex-direction: column;
   font-size: 14px;
@@ -51,16 +51,11 @@ const Block1 = styled.div`
   gap: 16px;
   flex-shrink: 0;
   align-self: stretch;
-  /* width: 203px; */
 
   @media (max-width: 768px) {
-    width: 369px;
-    order: 1;
+    border-left: 2px solid #dde5ea;
   }
-  @media (max-width: 480px) {
-    width: 203px;
-    order: 1;
-  }
+
   .num {
     color: #1c4980;
     font-size: 20px;

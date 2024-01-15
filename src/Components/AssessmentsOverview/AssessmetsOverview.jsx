@@ -14,6 +14,14 @@ const cardData = [
     flex: "12%",
     orderMobile: 1,
     orderDesktop: 1,
+    mobile: {
+      order: 1,
+      flex: "40%",
+    },
+    desktop: {
+      order: 1,
+      flex: "12%",
+    },
   },
   {
     type: "Candidate",
@@ -30,6 +38,14 @@ const cardData = [
     flex: "26%",
     orderMobile: 3,
     orderDesktop: 2,
+    mobile: {
+      order: 3,
+      flex: "26%",
+    },
+    desktop: {
+      order: 2,
+      flex: "26%",
+    },
   },
   {
     type: "Candidate",
@@ -49,6 +65,14 @@ const cardData = [
     flex: "38%",
     orderMobile: 4,
     orderDesktop: 3,
+    mobile: {
+      order: 4,
+      flex: "38%",
+    },
+    desktop: {
+      order: 3,
+      flex: "38%",
+    },
   },
   {
     type: "TotalBlock",
@@ -58,23 +82,18 @@ const cardData = [
     flex: "10%",
     orderMobile: 2,
     orderDesktop: 4,
+    mobile: {
+      order: 2,
+      flex: "40%",
+    },
+    desktop: {
+      order: 4,
+      flex: "10%",
+    },
   },
 ];
 
 const AssessmentsOverview = () => {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
   return (
     <Assessment>
       <Heading>Assessments Overview</Heading>
@@ -107,11 +126,24 @@ const AssessmentsOverview = () => {
 // };
 
 const Card = ({ type, ...props }) => {
-  const order =
-    props.windowWidth <= 768 ? props.orderMobile : props.orderDesktop;
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+  const styles = windowWidth <= 768 ? props.mobile : props.desktop;
+
+  console.log("Style: ", styles, windowWidth);
   return (
-    <div style={{ flex: props.flex, order: order }}>
+    <div style={{ ...styles }}>
       {type === "TotalBlock" ? (
         <TotalBlock {...props} />
       ) : type === "Candidate" ? (
@@ -150,7 +182,6 @@ const OverviewBox = styled.div`
 
   @media (max-width: 768px) {
     width: 100%;
-    flex-direction: column;
   }
 `;
 

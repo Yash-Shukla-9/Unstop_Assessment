@@ -4,7 +4,6 @@ import Navbar from "../navbar/Navbar";
 import NewAssessment from "../MyAssessments/NewAssessment/NewAssessment";
 import MathAssessments from "../MyAssessments/MathAssessment/MathAssessments";
 import { useState } from "react";
-import FilterList from "../Modal/FilterListModal/FilterList";
 
 const FilterWrapper = styled.div`
   overflow: hidden;
@@ -29,12 +28,12 @@ const Right = () => {
     <div>
       <Navbar />
       <Content>
-        {/* <div className="Assessment"> */}
-        <AssessmentsOverview />
-        {/* </div> */}
+        <div className="Asessmento-overview">
+          <AssessmentsOverview />
+        </div>
 
-        <FilterWrapper show={filterlist}>
-          <FilterList />
+        <FilterWrapper show={filterlist} className="filter">
+          <AssessmentsOverview />
         </FilterWrapper>
 
         <div>
@@ -84,6 +83,12 @@ const Content = styled.div`
   background-color: #ffffff;
   padding: 20px 10px;
 
+  .Asessmento-overview {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
   margin: 0 0.5rem;
   @media (max-width: 768px) {
     padding: 20px 0;
@@ -102,6 +107,12 @@ const Content = styled.div`
     padding: 15px;
     color: #1c4980;
     font-size: 18px;
+  }
+
+  .filter {
+    @media (min-width: 769px) {
+      display: none;
+    }
   }
 `;
 

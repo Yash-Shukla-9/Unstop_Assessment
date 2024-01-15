@@ -155,7 +155,7 @@ export default MathAssessments;
 
 const MainContainer = styled.div`
   display: flex;
-  padding: 16px;
+  padding: 16px 16px 0px 16px;
   flex-direction: column;
   align-items: flex-start;
   gap: 12px;
@@ -164,6 +164,10 @@ const MainContainer = styled.div`
   border-radius: 12px;
   border: 1px solid #dadce0;
   background-color: #fff;
+
+  & {
+    cursor: pointer;
+  }
 
   @media (max-width: 768px) {
     width: 100%;
@@ -203,7 +207,7 @@ const DashedLine = styled.div`
 `;
 
 const Part3 = styled.div`
-  margin-top: 12px;
+  margin: 12px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;

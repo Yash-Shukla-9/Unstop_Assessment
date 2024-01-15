@@ -65,6 +65,11 @@ const MainAssessment = styled.div`
     gap: 10px;
     border-radius: 72px;
     background: #fff;
+
+    & {
+      cursor: pointer;
+    }
+
     @media (max-width: 768px) {
       width: 55px;
       height: 55px;
@@ -93,7 +98,7 @@ const TextBox = styled.div`
   .child-text {
     color: #1c4980;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 400;
     line-height: normal;
     padding-top: 12px;
     @media (max-width: 768px) {
